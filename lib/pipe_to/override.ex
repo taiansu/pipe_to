@@ -10,7 +10,7 @@ defmodule PipeTo.Override do
     end
   end
   @doc """
-  Since `~>` is the enhanced `|>`, you can overrid the Kernel.|> with `use PipeTo.Override`
+  Override the Kernel.|>/2
 
           defmodule YourModule do
               use PipeTo.Override
