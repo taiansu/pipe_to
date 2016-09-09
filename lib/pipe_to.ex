@@ -62,16 +62,11 @@ defmodule PipeTo do
     is_tuple(arg) && elem(arg, 0) == :_
   end
 
-  defp pipe_position(index) do
-    if is_nil(index), do: 0, else: index
+  defp pipe_position(nil),   do: 0
+  defp pipe_position(index), do: index
+    
+  defp fix_ast(ast, nil), do: ast
+  defp fix_ast({fun, meta, args}, index) do
+    {fun, meta, List.delete_at(args, index)}
   end
-
-  defp fix_ast(ast = {fun, meta, args}, index) do
-    if is_nil(index) do
-      ast
-    else
-      {fun, meta, List.delete_at(args, index)}
-    end
-  end
-
 end
