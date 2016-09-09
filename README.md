@@ -1,6 +1,6 @@
-# PipeTo `~>` 
+# PipeTo
 
-__Homing pipe__
+__Homing pipe  `~>`__
 
 The enhanced pipe operator which can specify the target position.
 
