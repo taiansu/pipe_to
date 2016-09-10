@@ -58,13 +58,12 @@ defmodule PipeTo do
     [{other, 0} | acc]
   end
 
-  defp is_placeholder(arg) do
-    is_tuple(arg) && elem(arg, 0) == :_
-  end
+  defp is_placeholder({:_, _, _}),  do: true
+  defp is_placeholder(_), do: false
 
   defp pipe_position(nil),   do: 0
   defp pipe_position(index), do: index
-    
+
   defp fix_ast(ast, nil), do: ast
   defp fix_ast({fun, meta, args}, index) do
     {fun, meta, List.delete_at(args, index)}
