@@ -91,6 +91,9 @@
     <a href="#unpipe/1">unpipe(expr)</a>
   </div>
   
+    <div class="summary-synopsis"><p>Breaks a pipeline expression into a list. This is where the target position being calculated</p>
+</div>
+  
 </div>
 
   </div>
@@ -136,15 +139,29 @@
     </a>
     <span class="signature">unpipe(expr)</span>
     
-      <a href="https://github.com/taiansu/pipe_to/blob/master/lib/pipe_to.ex#L40" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/taiansu/pipe_to/blob/master/lib/pipe_to.ex#L49" class="view-source" rel="help" title="View Source">
        <i class="icon-code"></i>
      </a>
     
     
   </div>
   
+    <div class="specs">
+      <h4 class="specs-title">Specs</h4>
+      <div class="specs-list">
+        
+          <pre><code class="elixir">unpipe(<a href="http://elixir-lang.org/docs/stable/elixir/Macro.html#t:t/0">Macro.t</a>) :: [<a href="http://elixir-lang.org/docs/stable/elixir/Macro.html#t:t/0">Macro.t</a>]</code></pre>
+        
+      </div>
+    </div>
+  
   <section class="docstring">
-    
+    <p>Breaks a pipeline expression into a list. This is where the target position being calculated.</p>
+<pre><code class="elixir">    PipeTo.unpipe(quote do: 5 ~&gt; div(100, _) ~&gt; div(2))
+    # =&gt; [{5, 0},
+    #     {{:div, [context: Elixir, import: Kernel], &#39;d&#39;}, 1},
+    #     {{:div, [], [2]}, 0}]</code></pre>
+
   </section>
 </div>
 

@@ -37,6 +37,15 @@ defmodule PipeTo do
     end, h, t
   end
 
+  @doc """
+  Breaks a pipeline expression into a list. This is where the target position being calculated.
+
+          PipeTo.unpipe(quote do: 5 ~> div(100, _) ~> div(2))
+          # => [{5, 0},
+          #     {{:div, [context: Elixir, import: Kernel], 'd'}, 1},
+          #     {{:div, [], [2]}, 0}]
+  """
+  @spec unpipe(Macro.t) :: [Macro.t]
   def unpipe(expr) do
     :lists.reverse(unpipe(expr, []))
   end

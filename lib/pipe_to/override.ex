@@ -9,6 +9,7 @@ defmodule PipeTo.Override do
       import unquote(__MODULE__)
     end
   end
+
   @doc """
   Override the Kernel.|>/2
 
