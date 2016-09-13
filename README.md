@@ -1,10 +1,8 @@
 # PipeTo
 
-__Homing pipe  `~>`__
-
 The enhanced pipe operator which can specify the target position.
 
-## Getting Start
+## Installation
 
 To use PipeTo with your projects, edit your mix.exs file and add it as a dependency:
 
@@ -18,7 +16,7 @@ defp application do
 end
 ```
 
-### Introduction
+## Quick start
 
 * `import PipeTo` in your module,
 * pipe with `~>`
