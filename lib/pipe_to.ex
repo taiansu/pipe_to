@@ -58,9 +58,9 @@ defmodule PipeTo do
     placeholder_index =
       Enum.find_index(args, &is_placeholder/1)
 
-    correct_ast = fix_ast(ast, placeholder_index)
+    fixed_ast = remove_placeholder(ast, placeholder_index)
 
-    [{correct_ast, pipe_position(placeholder_index)} | acc]
+    [{fixed_ast, pipe_position(placeholder_index)} | acc]
   end
 
   defp unpipe(other, acc) do
@@ -73,8 +73,8 @@ defmodule PipeTo do
   defp pipe_position(nil),   do: 0
   defp pipe_position(index), do: index
 
-  defp fix_ast(ast, nil), do: ast
-  defp fix_ast({fun, meta, args}, index) do
+  defp remove_placeholder(ast, nil), do: ast
+  defp remove_placeholder({fun, meta, args}, index) do
     {fun, meta, List.delete_at(args, index)}
   end
 end
