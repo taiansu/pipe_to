@@ -10,7 +10,7 @@ To use PipeTo with your projects, edit your mix.exs file and add it as a depende
 
 ```elixir
 def deps do
-  [{:pipe_to, "~> 0.1.0"}]
+  [{:pipe_to, "~> 0.1"}]
 end
 
 defp application do
