@@ -64,7 +64,7 @@ Foo.bar
 
   The reason I still want this is because the combination of curried function (or partial application) with pipe operator is so elegant, like [this F# example here](https://fsharpforfunandprofit.com/posts/partial-application/). Since Elixir doesn't have these mechnism, and also anonymous function call use `.()`, so syntactically (well, aesthetically) the only choice I have is to modify the pipe operator.
 
-### Is it any good?
+## Is it any good?
 [Yes](https://news.ycombinator.com/item?id=3067434)
 
 ## License
