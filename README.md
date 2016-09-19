@@ -62,9 +62,8 @@ Foo.bar
 use `PipeTo` sightly faster then normal pipe in all these cases below. For the __case 2__ and __case 3__, I will guess
 that anonymous function slow down the oridinary pipe. But it doesn't explain why in the _case 1_ `PipeTo` insignificantly faster
 then ordinary pipe. Any ideas?
-
 ###Case 1: Ordinary Pipe vs PipeTo without index
-![bench_1](https://cloud.githubusercontent.com/assets/241597/18634415/6215a2b2-7eb3-11e6-93c6-7606e89f6603.png)
+![bench_1](https://cloud.githubusercontent.com/assets/241597/18636055/fefa4e9c-7eb9-11e6-9430-fe79b1147139.png)
 
 ###Case 2: Pipe with anonymous function vs PipeTo with index
 ![bench_2](https://cloud.githubusercontent.com/assets/241597/18634414/621593f8-7eb3-11e6-8c31-2895efd150b8.png)
