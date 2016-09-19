@@ -57,6 +57,21 @@ Foo.bar
 # 4
 ```
 
+## Performance
+
+use `PipeTo` sightly faster then normal pipe in all these cases below. For the __case 2__ and __case 3__, I will guess
+that anonymous function slow down the oridinary pipe. But it doesn't explain why in the _case 1_ `PipeTo` insignificantly faster
+then ordinary pipe. Any ideas?
+
+###Case 1: Ordinary Pipe vs PipeTo without index
+[https://cloud.githubusercontent.com/assets/241597/18634415/6215a2b2-7eb3-11e6-93c6-7606e89f6603.png]
+
+###Case 2: Pipe with anonymous function vs PipeTo with index
+[https://cloud.githubusercontent.com/assets/241597/18634414/621593f8-7eb3-11e6-8c31-2895efd150b8.png]
+
+###Case 3: Pipe with anonymous vs use PipeTo.Override
+[https://cloud.githubusercontent.com/assets/241597/18634416/6217001c-7eb3-11e6-94dd-aacc9dec2ad1.png]
+
 ## Disclaimer
   I have read through the proposals of pipe operator enhancement on the [elixir-lang-core](https://groups.google.com/forum/#!forum/elixir-lang-core), like [this](https://groups.google.com/forum/#!searchin/elixir-lang-core/pipe$20argument%7Csort:relevance/elixir-lang-core/jKOJ1zUYwaE/SIKql6ybAQAJ), [this](https://groups.google.com/forum/#!searchin/elixir-lang-core/pipe$20argument|sort:relevance/elixir-lang-) or [this](https://groups.google.com/forum/#!searchin/elixir-lang-core/pipe$20argument|sort:relevance/elixir-lang-core/wTK072BdJus/GOUMaUrEEQAJ).
 
