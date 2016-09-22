@@ -11,4 +11,12 @@ defmodule PipeTo.OverrideToTest do
     result = 5 |> Enum.take(1..10, _) |> Enum.reverse
     assert result == [5, 4, 3, 2, 1]
   end
+
+  test "works like normal pipe" do
+    result = ~w(a b c)a
+    |> Enum.zip(3..1)
+    |> Enum.sort_by(fn {k, v} -> v end)
+
+    assert result == [c: 1, b: 2, a: 3]
+  end
 end
