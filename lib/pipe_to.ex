@@ -54,7 +54,7 @@ defmodule PipeTo do
     unpipe(right, unpipe(left, acc))
   end
 
-  defp unpipe(ast = {_, _, args}, acc) do
+  defp unpipe(ast = {_, _, args}, acc) when is_list(args) do
     placeholder_index =
       Enum.find_index(args, &is_placeholder/1)
 
