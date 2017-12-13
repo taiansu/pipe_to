@@ -10,11 +10,9 @@ To use PipeTo with your projects, edit your mix.exs file and add it as a depende
 def deps do
   [{:pipe_to, "~> 0.1"}]
 end
-
-defp application do
-  [applications: [:pipe_to]]
-end
 ```
+
+Then run `mix deps.get`
 
 ## Quick start
 
