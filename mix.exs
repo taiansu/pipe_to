@@ -3,7 +3,7 @@ defmodule PipeTo.Mixfile do
 
   def project do
     [app: :pipe_to,
-     version: "0.1.2",
+     version: "0.2.0",
      elixir: "~> 1.3",
      name: "PipeTo",
      source_url: "https://github.com/taiansu/pipe_to",
@@ -25,7 +25,7 @@ defmodule PipeTo.Mixfile do
   end
 
   defp package do
-    [ files: ["lib", "priv", "mix.exs", "README.md", "LICENSE"],
+    [ files: ["lib", "mix.exs", "README.md", "LICENSE"],
       maintainers: ["Tai An Su"],
       licenses: ["Apache 2.0"],
       links: %{"GitHub": "https://github.com/taiansu/pipe_to",
@@ -34,8 +34,8 @@ defmodule PipeTo.Mixfile do
 
   defp deps do
     [
-      {:ex_doc, "~> 0.13", only: :dev},
-      {:excoveralls, "~> 0.5", only: [:dev, :test]}
+      {:ex_doc, "~> 0.13", only: :dev, runtime: false},
+      {:excoveralls, "~> 0.5", only: [:dev, :test], runtime: false}
     ]
   end
 end
