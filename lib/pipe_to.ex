@@ -27,14 +27,25 @@ defmodule PipeTo do
   defmacro left ~> right do
     [{h, _} | t] = __MODULE__.unpipe({:~>, [], [left, right]})
 
-    :lists.foldl fn {x, pos}, acc ->
-      case Macro.pipe_warning(x) do
-        nil -> :ok
-        message ->
+    # Bascially follows `lib/elixir/lib/kernel` left |> right
+    # https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/kernel.ex#L3134
+    fun = fn {x, pos}, acc ->
+      case x do
+        {op, _, [_]} when op == :+ or op == :- ->
+          message =
+            <<"piping into a unary operator is deprecated, please use the ",
+              "qualified name. For example, Kernel.+(5), instead of +5">>
+
           :elixir_errors.warn(__CALLER__.line, __CALLER__.file, message)
+
+        _ ->
+          :ok
       end
+
       Macro.pipe(acc, x, pos)
-    end, h, t
+    end
+
+    :lists.foldl(fun, h, t)
   end
 
   @doc """
