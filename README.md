@@ -88,4 +88,4 @@ Apache 2
 ## TODO
 * Discard the default operator, user should specify the operator expicitly, to work with lib like Witchcraft better.
 * Pipe into mutiple target at once
-* Pipe into target in nested expression, instead of only the shallowiest level.
+* Pipe into target in nested expression, instead of only the shallowest level like now.
