@@ -1,5 +1,6 @@
 defmodule PipeToTest do
   use ExUnit.Case
+  use PropCheck
   import PipeTo
   doctest PipeTo
 
@@ -18,5 +19,11 @@ defmodule PipeToTest do
       ~> Map.merge(%{d: 4, e: 5}, _)
 
     assert result == %{a: 1, b: 2, c: 3, d: 4, e: 5}
+  end
+
+  property "Pipe to function with 1 argument, without assigning position" do
+    forall {fun, arg} <- {function1(any()), any()} do
+      arg ~> fun.() == fun.(arg)
+    end
   end
 end

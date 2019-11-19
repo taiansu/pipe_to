@@ -15,7 +15,7 @@ defmodule PipeTo.Mixfile do
   end
 
   def application do
-    [applications: [:logger]]
+    [extra_applications: [:logger]]
   end
 
   defp description do
@@ -35,7 +35,8 @@ defmodule PipeTo.Mixfile do
   defp deps do
     [
       {:ex_doc, "~> 0.13", only: :dev, runtime: false},
-      {:excoveralls, "~> 0.5", only: [:dev, :test], runtime: false}
+      {:excoveralls, "~> 0.5", only: [:dev, :test], runtime: false},
+      {:propcheck, "~> 1.1", only: [:test, :dev]}
     ]
   end
 end
