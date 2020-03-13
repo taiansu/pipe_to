@@ -15,7 +15,7 @@ defmodule PipeTo.OverrideToTest do
   test "works like normal pipe" do
     result = ~w(a b c)a
     |> Enum.zip(3..1)
-    |> Enum.sort_by(fn {k, v} -> v end)
+    |> Enum.sort_by(fn {_, v} -> v end)
 
     assert result == [c: 1, b: 2, a: 3]
   end
