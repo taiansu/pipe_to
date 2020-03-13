@@ -33,10 +33,10 @@ defmodule PipeTo do
       case x do
         {op, _, [_]} when op == :+ or op == :- ->
           message =
-            <<"piping into a unary operator is deprecated, please use the ",
-              "qualified name. For example, Kernel.+(5), instead of +5">>
+            "piping into a unary operator is deprecated, please use the " <>
+              "qualified name. For example, Kernel.+(5), instead of +5"
 
-          :elixir_errors.warn(__CALLER__.line, __CALLER__.file, message)
+          IO.warn(message, Macro.Env.stacktrace(__CALLER__))
 
         _ ->
           :ok
