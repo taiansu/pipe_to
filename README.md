@@ -1,3 +1,5 @@
+[![Build Status](https://github.com/taiansu/pipe_to/workflows/ci/badge.svg)](https://github.com/taiansu/pipe_to/actions)
+
 # PipeTo
 
 The enhanced pipe operator which can specify the target position.
