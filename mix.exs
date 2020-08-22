@@ -3,7 +3,7 @@ defmodule PipeTo.Mixfile do
 
   def project do
     [app: :pipe_to,
-     version: "0.2.0",
+     version: "0.2.1",
      elixir: "~> 1.3",
      name: "PipeTo",
      source_url: "https://github.com/taiansu/pipe_to",
