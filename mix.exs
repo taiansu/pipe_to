@@ -34,7 +34,7 @@ defmodule PipeTo.Mixfile do
 
   defp deps do
     [
-      {:ex_doc, "~> 0.13", only: :dev, runtime: false},
+      {:ex_doc, "~> 0.22.2", only: :dev, runtime: false},
       {:excoveralls, "~> 0.5", only: [:dev, :test], runtime: false}
     ]
   end
