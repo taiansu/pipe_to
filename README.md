@@ -1,5 +1,27 @@
 [![Build Status](https://github.com/taiansu/pipe_to/workflows/ci/badge.svg)](https://github.com/taiansu/pipe_to/actions)
 
+
+# Disclaimer
+
+Start from Elixir 1.12.0, we have [Kernel.then/2](https://hexdocs.pm/elixir/1.12.0/Kernel.html#then/2),
+which let us pipe into a partial application, nativately. We should follow the official convention
+while we could. For example:
+
+```elixir
+1
+|> then(&Enum.at([1, 2, 3], &1))
+
+5
+|> then(&Enum.take(1..10, &1))
+|> Enum.reverse()
+```
+
+I'll maintain this library for legacy Elixir versions, until they reach their end of lifes.
+
+Thanks for all the starts. Let's move on, live long and prosper.
+
+---
+
 # PipeTo
 
 The enhanced pipe operator which can specify the target position.
